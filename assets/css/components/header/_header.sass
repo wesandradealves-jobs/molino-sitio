@@ -1,0 +1,129 @@
+.header
+	display: flex
+	flex-flow: column 
+	justify-content: center 
+	align-items: center 
+	height: 113px 
+	width: 100%
+	font-family: 'Domine', serif
+	background: url(assets/img/header.jpg) center center / auto repeat-x
+	z-index: 99
+	position: fixed 
+	top: 0
+	left: 0
+	transition: 100ms linear height 
+	.mobile-navigation
+		position: absolute
+		top: 100%
+		left: 0
+		width: 100%
+		padding: 30px
+		background: transparentize($lightbeige, .2)
+		z-index: 1
+		padding-top: 100px
+		color: $darkbrown
+		overflow: auto
+		min-height: 100vh
+		display: none
+		&.toggle 
+			display: block
+		ul 
+			>li 
+				display: block 
+				&:not(:last-child)
+					border-bottom: 1px transparentize($darkbrown, .5) dotted
+					padding-bottom: 15px 
+					margin-bottom: 15px
+	.container 
+		nav 
+			ul 
+				width: 100%
+				display: flex 
+				flex-flow: row wrap 
+				justify-content: space-between 
+				align-items: center 
+				> *
+					flex: 1
+					text-align: center
+					position: relative
+					font-size: 1rem
+					color: $lightbeige
+					&:not(:nth-child(3)):not(:last-child)
+						+mq(1024px, max)
+							display: none
+					&:last-child
+						overflow: hidden
+						&.toggle 
+							height: 5px
+						+mq(1024px, min)
+							display: none
+					&:not(:nth-child(6)):not(:nth-child(3))
+						>a
+							position: inherit
+							&::after 
+								display: block 
+								content: ''
+								height: 2px 
+								width: 0
+								transition: 500ms linear width 
+								background: $beige
+								top: calc(100% + 5px) 
+								position: absolute
+								left: 0
+							&:hover, &.active
+								color: $beige
+								&::after 
+									width: 100%
+					&:nth-child(3)
+						flex: 0 0 auto
+						position: inherit 
+						top: 60px					
+						+mq(1024px, max)
+							flex: 1		
+							top: 26px
+							display: flex 
+							flex-flow: column 
+							justify-content: center 
+							align-items: center
+							+mq(490px, max)
+								top: 0
+							.logo 
+								+mq(490px, max)
+									background: none
+									padding: 0 15px
+									height: auto
+									> * 
+										padding: 0
+							& ~ *:last-child 
+								flex: 0 0 auto	
+		z-index: 2
+		+mq(568px, max)
+			padding-left: 15px 
+			padding-right: 15px
+	&.sticky 
+		height: 70px
+		.mobile-navigation
+			padding-top: 130px
+		.container
+			nav ul>:nth-child(3)
+				+mq(1024px, max)
+					top: 45px
+					+mq(490px, max)
+						top: 0
+	.logo 
+		background: url(assets/img/logo-bg.png) center 0 / auto no-repeat
+		max-width: 390px
+		width: 100%
+		height: 165px
+		padding: 0 40px
+		display: flex 
+		flex-flow: row wrap
+		justify-content: center 
+		align-items: center 
+		> * 
+			flex: 1
+			img 
+				max-width: 100%
+				+mq(490px, max)
+					max-height: 40px
+	

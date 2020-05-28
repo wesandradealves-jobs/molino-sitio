@@ -1,0 +1,203 @@
+textarea,
+input
+    &[placeholder]
+        color: lightgray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &::-moz-placeholder
+        color: lightgray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &::-webkit-input-placeholder
+        color: lightgray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &:-ms-input-placeholder 
+        color: lightgray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+.separator
+    border: 0
+    height: 3px 
+    width: 300px
+    background: url(assets/img/separator.png) center center no-repeat transparent 
+    display: block
+    +mq(490px, max)
+        width: 100%
+
+.custom-checkbox
+    .input 
+        position: relative
+        height: 15px
+        width: 15px
+        display: block
+        input 
+            position: absolute
+            top: 0
+            left: 0
+            width: inherit
+            height: inherit
+            z-index: 2
+            cursor: pointer
+            display: inherit
+            opacity: 0
+            & + label 
+                display: flex!important
+                justify-content: center 
+                align-items: center 
+                flex-flow: column
+                width: inherit!important
+                height: inherit!important
+                position: inherit 
+                margin-bottom: 0!important
+                z-index: 1
+                border: 2px $brown solid
+                top: -2px
+                border-radius: 999px
+                &::after 
+                    height: calc(100% - 4px)
+                    width: calc(100% - 4px) 
+                    background: $brown
+                    opacity: 0
+                    transition: 100ms linear all
+                    content: ''
+                    display: block
+                    border-radius: 999px
+            &:checked + label::after 
+                opacity: 1
+
+section
+    h2 
+        color: $brown
+        font-family: 'Sofia', cursive
+        font-size: 2rem
+        line-height: 1
+        position: relative    
+        text-align: center
+        width: 100%
+        border-bottom: 1px transparentize($brown, .7) dashed
+        padding-bottom: 15px
+        margin-bottom: 35px
+        +mq(640px, max) 
+            text-indent: initial!important
+            padding-left: 0 !important
+            padding-right: 0 !important
+            font-size: 1.3rem
+            &::after 
+                display: none!important
+
+.produtos-grid
+    display: flex 
+    flex-flow: row wrap 
+    justify-content: space-between 
+    align-items: stretch 
+    margin: 0 -20px -45px
+    +mq(567px, max)
+        margin: 0 0 -45px
+    overflow: hidden
+    .item 
+        padding: 0 10px 45px
+        flex: 0 0 auto 
+        width: 25%
+        overflow: inherit
+        height: 100%
+        +mq(1024px, max)
+            width: 33.333%
+            +mq(640px, max) 
+                width: 50%
+                +mq(567px, max)
+                    width: 100%
+                    padding: 0 0 45px
+        &-inner 
+            height: inherit
+            overflow: inherit
+            h3 
+                display: block 
+                height: 51px
+                width: 100%
+                background: url(assets/img/tiles.png) center center / contain no-repeat
+                text-align: center 
+                color: $brown
+                font-size: 1.2rem
+                +mq(490px, max)
+                    font-size: 1rem
+                line-height: 49px
+                margin: 20px auto 0
+                overflow: inherit 
+                white-space: nowrap 
+                text-overflow: ellipsis
+                padding: 0 35px
+                font-family: 'Domine', serif
+            .thumbnail
+                width: 100%
+                max-width: 260px
+                margin: 0 auto 
+                padding: 0 0 100%
+                position: relative
+                overflow: hidden 
+                display: block
+                background-size: auto
+                background-position: center center 
+                background-repeat: no-repeat
+                box-shadow: 0px 4px 10px -5px black
+                +mq(567px, max)
+                    padding: 0 
+                    height: 261px
+                &:hover p 
+                    top: 0
+                    opacity: 1
+                p 
+                    position: absolute 
+                    display: flex 
+                    flex-flow: column 
+                    justify-content: space-between
+                    align-items: stretch 
+                    width: inherit 
+                    height: 100%
+                    top: 0
+                    left: 0
+                    background: url(assets/img/square-brown.png) center center no-repeat transparentize($lightbeige, .1)
+                    z-index: 2
+                    padding: 30px 35px
+                    text-align: center 
+                    color: $darkbrown 
+                    font-weight: 300
+                    font-size: 1.1rem
+                    transition: 500ms ease-in-out all
+                    opacity: 0
+                    top: -50px
+                    small 
+                        margin-top: auto
+                        display: flex 
+                        flex-flow: column 
+                        justify-content: flex-end
+                        padding-top: 10px
+                        font-weight: bold 
+                        font-size: 1.2rem
+                        border-top: 1px transparentize($darkbrown, .5) dotted
+                &::after 
+                    content: ''
+                    display: block 
+                    position: absolute 
+                    width: 100%
+                    height: 100%
+                    top: 0
+                    left: 0
+                    background: url(assets/img/square.png) center center / auto no-repeat 
+                    z-index: 1
+
+.btn 
+    padding: 5px 12px
+    font-size: .8rem 
+    text-align: center 
+    display: inline-block 
+    &.btn-1 
+        color: $green 
+        border: 1px $green solid
+    &.btn-2 
+        background: $green 
+        color: whitesmoke

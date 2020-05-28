@@ -1,0 +1,68 @@
+.newsletter
+	background-color: $lightbeige
+	border-bottom: 1px $brown dashed
+	.container 
+		padding-top: 30px
+		padding-bottom: 30px
+		p,
+		h2 
+			font-size: 1.3rem 
+			line-height: 1.3
+			color: $darkbrown
+			text-align: left
+			border: 0px 
+			padding: 0
+			margin: 0
+		h2 
+			font-family: 'Domine', serif
+		form 
+			display: flex 
+			flex-flow: row wrap 
+			align-items: stretch
+			padding-top: 20px
+			.custom-checkbox
+				display: inline-flex 
+				vertical-align: middle
+				align-items: center 
+				padding-top: 5px 
+				flex-flow: row 
+				+mq(490px, max)
+					display: flex
+				&:not(:first-of-type)
+					padding-left: 30px
+					+mq(490px, max)
+						padding-left: 0
+				.input + label 
+					padding-left: 5px
+			label,
+			p 
+				color: black
+				font-size: 1rem
+				flex: 0 0 auto 
+				width: 100%
+				margin-bottom: 4px
+				display: block 
+			label 
+				color: $brown
+			> div 
+				&:not(:last-child)
+					padding-right: 90px
+					+mq(840px, max)
+						padding-right: 15px
+						+mq(640px, max)	
+							padding-right: 0
+				&:not(:first-child)
+					flex: 1
+					+mq(640px, max)	
+						flex: 0 0 auto 
+						width: 100%
+						padding-top: 15px
+			input[type="text"],
+			input[type="email"]
+				padding: 0 5px
+				border: 1px $brown solid
+				line-height: 2.2
+				background-color: transparent 
+				color: $brown
+				font-size: .9rem
+				width: 100%

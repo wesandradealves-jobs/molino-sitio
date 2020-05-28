@@ -1,0 +1,93 @@
+@-webkit-keyframes opacity 
+    0% 
+        opacity: 0
+    
+    100% 
+        opacity: 1
+
+@-moz-keyframes opacity 
+    0% 
+        opacity: 0
+    
+    100% 
+        top: 0
+
+@-ms-keyframes opacity 
+    0% 
+        opacity: 0
+    
+    100% 
+        opacity: 1
+
+@-webkit-keyframes top-opacity
+    0% 
+        opacity: 0
+        top: -300px
+    
+    100% 
+    	top 0
+        opacity: 1
+
+@-moz-keyframes top-opacity
+    0% 
+        opacity: 0
+        top: -300px
+    
+    100% 
+        top 0
+        opacity: 1
+
+@-ms-keyframes top-opacity
+    0% 
+        opacity: 0
+        top: -300px
+    
+    100% 
+    	top 0
+        opacity: 1        
+    
+body, html 
+	+animation(opacity, 500ms)
+#wrap 
+    overflow: hidden 
+    min-height: 100vh
+    padding-top: 113px
+.container 
+	margin-left: auto 
+	margin-right: auto 
+	max-width: calc(1105px + 35px)
+	width: 100%
+	padding-left: 35px 
+	padding-right: 35px
+.has-wpp
+    a 
+        position: absolute
+        top: -10px
+        right: -100px
+        +mq(1680px, min)   
+            right: -220px
+        +mq(1281px, min)
+            svg 
+                display: none
+        +mq(1280px, max)
+            right: 0 
+            top: initial 
+            bottom: 0
+            position: fixed
+            z-index: 50
+            margin: 20px
+            background-color: $green 
+            height: 60px 
+            width: 60px
+            display: flex 
+            flex-flow: column 
+            justify-content: center 
+            align-items: center
+            color: white
+            border-radius: 999px
+            svg
+                display: block
+            img 
+                display: none
+        img 
+            max-width: 300px

@@ -1,0 +1,189 @@
+.child-theme
+	section h2
+		color: $green
+		border-color: $green
+	.produtos-grid
+		margin: 0 auto
+		.item
+			width: 100%
+			height: auto
+			&-inner 
+				height: auto
+				&:hover h3 
+					display: none
+				.thumbnail 
+					max-width: 100%
+					padding: 0 0 70%
+					background-size: cover
+					p 
+						text-align: left
+						background-image: none
+						padding: 15px
+						overflow: auto
+						+mq(900px, max)
+							font-size: .8rem
+						small 
+							order: 1
+							margin: 0 0 20px
+							+mq(900px, max)
+								margin: 0 0 10px
+							color: $brown 
+							border: 0
+							padding: 0
+							flex: 0 0 auto
+						span 
+							order: 2
+							flex: 1
+							color: black
+					&::after 
+						display: none
+				h3
+					background: transparentize($lightbeige, .2)
+					text-align: left
+					font-size: .9rem
+					color: $darkbrown
+					line-height: initial
+					padding: 15px 20px
+					height: auto
+					position: absolute
+					bottom: 0
+					left: 0
+					+mq(900px, max)
+						overflow: hidden 
+						text-overflow: ellipsis
+						white-space: nowrap
+	.pg-home
+		.sobre-organicos
+			h2
+				&::after 
+					content: url(assets/img/bird.png)
+					display: block 
+					position: absolute
+					right: 0
+					bottom: 0
+			.row 
+				display: flex 
+				flex-flow: row wrap 
+				justify-content: space-between
+				align-items: stretch
+				margin: 0 -50px
+				+mq(900px, max)
+					margin: 0 -30px
+					+mq(737px, max)
+						margin: 0 -15px
+						+mq(690px, max)
+							margin: 0 0 -60px
+							flex-flow: column
+				>* 
+					display: flex 
+					flex-flow: column
+					justify-content: center 
+					align-items: center
+					flex: 1
+					padding: 0 50px		
+					+mq(900px, max)
+						padding: 0 30px
+						+mq(737px, max)
+							padding: 0 15px
+							+mq(690px, max)
+								padding: 0 0 60px
+					text-align: center
+					p 
+						font-size: .9rem
+					h3 
+						font-size: 1rem 
+						flex: 1
+						color: $brown	
+						display: block 
+						margin: 35px auto 15px
+		.produtos 	
+			background: $lightgreen
+			h2
+				border: 0
+				padding-bottom: 0 
+			.container
+				display: flex 
+				flex-flow: row wrap 
+				justify-content: space-between 
+				align-items: flex-start
+				h2
+					flex: 0 0 auto 
+					width: 100%
+				.produtos-grid 
+					flex: 0 0 auto 
+					width: 50%
+					align-items: flex-start
+					overflow: initial
+					+mq(737px, max)
+						width: 100%
+					&:first-of-type
+						& ~ *
+							> * 
+								flex: 0 0 auto 
+								padding-bottom: 15px 
+								width: 50%
+								+mq(568px, max)
+									width: 100%
+									.thumbnail
+										padding: 0 0 45%!important
+								&:nth-child(2)
+									.thumbnail
+										padding: 0 0 145%	
+								&:nth-child(1),
+								&:nth-child(3)
+									.thumbnail
+										padding: 0 0 107%
+								&:nth-child(3)
+									margin-top: -17%		
+									+mq(568px, max)
+										margin-top: 0													
+						> *
+							flex: 0 0 auto 
+							padding-bottom: 15px
+							&:first-of-type
+								width: 100%
+								& ~ *
+									width: 50% 	
+									+mq(568px, max)
+										width: 100%
+										.thumbnail
+											padding: 0 0 45%
+
+
+		.webdoor
+			min-height: auto
+			.container
+				+mq(490px, max)	
+					padding-top: 210px 
+				&-inner
+					 height: auto 
+					 padding: 0
+					 background: none
+					 h2 
+					 	color: white
+	.header
+		.logo
+			background: none
+			img 
+				max-height: initial!important
+		.container
+			nav 
+				ul
+					& > *
+						&:not(:nth-child(3)):not(:last-child)
+							+mq(1025px, min)
+								top: 20px
+						&:nth-child(3)
+							+mq(1024px, max)
+								top: 50px
+		&.sticky
+			.container
+				nav 
+					ul
+						& > *
+							&:not(:nth-child(3)):not(:last-child)
+								+mq(1025px, min)
+									top: 0
+							&:nth-child(3)
+								+mq(1024px, max)
+									top: 60px				
