@@ -1,0 +1,135 @@
+.footer
+	background-color: $lightbeige
+	.copyright
+		background: $darkbrown
+		.container 
+			p 
+				line-height: 3
+				color: $beige
+				text-align: center
+				+mq(490px, max)
+					line-height: 1.4
+					font-size: .9rem
+					padding: 15px 0				
+	&-bottom 
+		width: 100%
+		background: url(assets/img/header.jpg) center bottom / auto repeat-x
+		height: 113px
+		margin-top: 113px
+		&::before 
+			background: url(assets/img/grass.png) center center / auto repeat-x $lightbeige
+			height: 87px
+			width: inherit 
+			display: block
+			content: ''
+			position: absolute
+			top: -85px
+			left: 0
+		.container 
+			display: flex 
+			flex-flow: column 
+			justify-content: center 
+			align-items: center 
+			color: white
+			height: 100%
+			p 
+				font-size: 1rem
+				line-height: 2
+				+mq(490px, max)
+					line-height: 1.4
+					font-size: .9rem
+				text-align: center
+	>.container
+		h2 
+			color: $green
+			font-family: 'Sofia', cursive
+			font-size: 2rem
+			line-height: 1
+			position: relative    
+			text-align: center
+			width: 100%
+			border-bottom: 1px transparentize($brown, .7) dashed
+			padding-bottom: 15px
+			margin-bottom: 35px	
+			&::after 
+				content: url(assets/img/bug.png)
+				display: block 
+				position: absolute
+				right: 6px
+				bottom: -6px				 
+		padding-top: 60px
+	.container
+		&-inner 
+			display: flex
+			text-align: stretch 
+			flex-flow: row wrap 
+			justify-content: space-between 
+			margin: 0 -45px
+			+mq(840px, max)
+				margin: 0 -15px
+			.form 
+				.form-group
+					display: block 
+					margin-bottom: 15px
+					label 
+						display: block 
+						margin-bottom: 5px
+						font-family: Trebuchet MS
+						color: $green
+						font-size: .85rem
+						font-weight: bold
+					input, textarea 
+						border: 1px $green solid
+						padding: 5px
+						color: $brown
+						width: 100%
+						font-family: Trebuchet MS
+						display: block
+						resize: none 
+						overflow: hidden
+						font-size: .85rem
+						background-color: transparent
+					textarea 
+						line-height: initial 
+						height: 90px
+			.social 
+				display: flex 
+				flex-flow: row wrap 
+				align-items: center
+				margin: 40px 0 0
+				> *
+					&:not(:last-child)
+						padding-right: 10px
+						font-size: 1.5rem
+						color: $green
+					&:last-child 
+						flex: 0 0 auto 
+						width: 100%
+						color: $green
+						margin-top: 5px
+			h3, p strong 
+				color: $green 
+			h3 
+				margin-bottom: 20px
+				font-weight: normal
+			p 
+				color: $brown	
+				font-size: .85rem
+				strong 
+					margin-bottom: 10px 
+					display: block			
+			> * 
+				flex: 1
+				padding: 0 45px
+				+mq(840px, max)
+					padding: 0 15px
+					+mq(737px, max)
+						flex: 0 0 auto 
+						width: 100%
+						padding: 0 0 15px	
+				> p 
+					&:first-of-type:not(:only-child):not(:last-child)
+						color: $green
+						display: block 
+						margin-bottom: 20px
+						font-weight: bold
